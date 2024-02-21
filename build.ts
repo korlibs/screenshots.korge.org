@@ -18,6 +18,9 @@ async function screenshot(page: puppeteer.Page, filename: string, url: string) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.setViewport({width: 1280, height: 720})
+    await page.emulateMediaFeatures([
+        {name: 'prefers-color-scheme', value: 'dark'},
+    ]);
     await screenshot(page, 'projects.png', 'https://github.com/orgs/korlibs/projects/19/views/23')
     await screenshot(page, 'root.png', 'https://korge.org/')
     await screenshot(page, 'docs.png', 'https://docs.korge.org/')
