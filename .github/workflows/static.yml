@@ -35,6 +35,9 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install puppeteer chrome
         run: npx puppeteer browsers install chrome
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
       - name: Run script
         run: ./build.ts
       - name: Upload artifact
