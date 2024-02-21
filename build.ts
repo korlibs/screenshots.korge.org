@@ -29,6 +29,8 @@ declare const document: any
 
     await page.setViewport({width: 1280, height: 1280})
     await screenshot(page, 'projects.png', 'https://github.com/orgs/korlibs/projects/19/views/23', () => { document.querySelector('header')?.remove() })
+    await screenshot(page, 'discussions.png', 'https://github.com/korlibs/korge/discussions', () => { document.querySelector('header')?.remove() })
+    await screenshot(page, 'dokka.png', 'https://dokka.korge.org/korge/index.html', () => { document.querySelector('header')?.remove() })
     await screenshot(page, 'root.png', 'https://korge.org/', () => { document.querySelector('#carbonads')?.remove() })
     await screenshot(page, 'docs.png', 'https://docs.korge.org/', () => { document.querySelector('#carbonads')?.remove() })
     await screenshot(page, 'blog.png', 'https://blog.korge.org/', () => { document.querySelector('#carbonads')?.remove() })
