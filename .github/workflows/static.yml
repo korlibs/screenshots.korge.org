@@ -33,6 +33,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v4
+      - name: Install puppeteer chrome
+        run: npx puppeteer browsers install chrome
+      - name: Run script
+        run: ./build.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
