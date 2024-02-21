@@ -17,7 +17,7 @@ async function screenshot(page: puppeteer.Page, filename: string, url: string) {
 (async() => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.setViewport({width: 1280, height: 720})
+    await page.setViewport({width: 1280, height: 1280})
     await page.emulateMediaFeatures([
         {name: 'prefers-color-scheme', value: 'dark'},
     ]);
