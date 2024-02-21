@@ -28,7 +28,8 @@ declare const document: any
     await screenshot(page, 'stars.png', 'https://star-history.com/embed?secret=#korlibs/korge&Date', () => { })
 
     await page.setViewport({width: 1280, height: 1280})
-    await screenshot(page, 'projects.png', 'https://github.com/orgs/korlibs/projects/19/views/23', () => { document.querySelector('header')?.remove() })
+    await screenshot(page, 'sprint.png', 'https://github.com/orgs/korlibs/projects/19/views/23', () => { document.querySelector('header')?.remove() })
+    await screenshot(page, 'roadmap.png', 'https://github.com/orgs/korlibs/projects/19/views/22', () => { document.querySelector('header')?.remove() })
     await screenshot(page, 'discussions.png', 'https://github.com/korlibs/korge/discussions', () => { document.querySelector('header')?.remove() })
     await screenshot(page, 'dokka.png', 'https://dokka.korge.org/korge/index.html', () => { document.querySelector('header')?.remove() })
     await screenshot(page, 'root.png', 'https://korge.org/', () => { document.querySelector('#carbonads')?.remove() })
