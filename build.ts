@@ -22,14 +22,16 @@ declare const document: any
 (async() => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.setViewport({width: 1280, height: 1280})
     await page.emulateMediaFeatures([{name: 'prefers-color-scheme', value: 'dark'}]);
-    await screenshot(page, 'projects.png', 'https://github.com/orgs/korlibs/projects/19/views/23', () => {
-        document.querySelector('header')?.remove()
-    })
-    await screenshot(page, 'root.png', 'https://korge.org/')
-    await screenshot(page, 'docs.png', 'https://docs.korge.org/')
-    await screenshot(page, 'blog.png', 'https://blog.korge.org/')
+    
+    await page.setViewport({width: 1280, height: 720})
+    await screenshot(page, 'stars.png', 'https://star-history.com/embed?secret=#korlibs/korge&Date', () => { })
+
+    await page.setViewport({width: 1280, height: 1280})
+    await screenshot(page, 'projects.png', 'https://github.com/orgs/korlibs/projects/19/views/23', () => { document.querySelector('header')?.remove() })
+    await screenshot(page, 'root.png', 'https://korge.org/', () => { document.querySelector('#carbonads')?.remove() })
+    await screenshot(page, 'docs.png', 'https://docs.korge.org/', () => { document.querySelector('#carbonads')?.remove() })
+    await screenshot(page, 'blog.png', 'https://blog.korge.org/', () => { document.querySelector('#carbonads')?.remove() })
     browser.close();
     Deno.exit(0)
 })();
