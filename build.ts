@@ -35,6 +35,7 @@ declare const document: any
     await screenshot(page, 'root.png', 'https://korge.org/', () => { document.querySelector('#carbonads')?.remove() })
     await screenshot(page, 'docs.png', 'https://docs.korge.org/', () => { document.querySelector('#carbonads')?.remove() })
     await screenshot(page, 'blog.png', 'https://blog.korge.org/', () => { document.querySelector('#carbonads')?.remove() })
+    await screenshot(page, 'store.png', 'https://store.korge.org/', () => { document.querySelector('#carbonads')?.remove() })
     browser.close();
     Deno.exit(0)
 })();
